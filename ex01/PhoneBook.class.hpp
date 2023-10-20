@@ -13,7 +13,9 @@ class PhoneBook
 		
 		void Add( void );
 		void Search( void ); 
-		void Exit( void ); 		
+		void Exit( void );
+	private:
+		static int _contactIndex;	
 };
 
 
