@@ -13,7 +13,7 @@ int	main(){
 		std::cout << "COMMAND LIST:"<< std::endl;
 		std::cout << "1. 'ADD' to insert a new contact in the address book" << std::endl;
 		std::cout << "2. 'SEARCH' to search for a contact among existing ones" << std::endl;
-		std::cout << "3. 'EXIT' I'll let you guess what it does" << std::endl;	
+		std::cout << "3. 'EXIT' Terminate PhoneBook" << std::endl;	
 		std::cin >> command;
 		std::cout << "This is the command you've inserted: " << command << std::endl;
 		if (command.compare("ADD") == 0)
