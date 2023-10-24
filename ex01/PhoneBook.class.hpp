@@ -14,6 +14,7 @@ class PhoneBook
 		void Add( void );
 		void Search( void ); 
 		void Exit( void );
+		void ShowContactDetails( int index ); 
 	private:
 		static int _numOfContacts;
 		static int _contactIndex;	
