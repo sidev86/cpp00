@@ -6,7 +6,8 @@ int	main(){
 	
 	PhoneBook pb;
 	std::string command;
-	while (1)
+	std::string input;
+	while(1)
 	{
 		std::cout << "** COOL SKETCHY PHONEBOOK **" << std::endl;
 		std::cout << std::endl;
@@ -14,10 +15,10 @@ int	main(){
 		std::cout << "1. 'ADD' to insert a new contact in the address book" << std::endl;
 		std::cout << "2. 'SEARCH' to search for a contact among existing ones" << std::endl;
 		std::cout << "3. 'EXIT' Terminate PhoneBook" << std::endl;	
-		std::cin >> command;
+		std::getline(std::cin, command);
 		std::cout << "This is the command you've inserted: " << command << std::endl;
 		if (command.compare("ADD") == 0)
-			pb.Add();
+			pb.Add();	
 		else if (command.compare("SEARCH") == 0)
 			pb.Search();
 		else
