@@ -25,6 +25,11 @@ int	main(){
 			pb.Add();	
 		else if (command.compare("SEARCH") == 0)
 			pb.Search();
+		else if (command.compare("EXIT") == 0)
+		{
+			std::cout << "Exit from Phonebook..." << std::endl;
+			exit(0);
+		}
 		else
 			std::cout << "Command not found" << std::endl;
 	}

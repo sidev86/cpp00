@@ -1,10 +1,6 @@
-#include <iostream>
-#include <iomanip>
-#include <stdlib.h>
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
-#include <string>
-#include <sstream>
+
 
 int PhoneBook::_numOfContacts = 0;
 int PhoneBook::_contactIndex = 0;
@@ -16,7 +12,7 @@ PhoneBook::~PhoneBook( void ) {
 }
 
 
-void printField(std::string str)
+void PhoneBook::PrintField(std::string str)
 {
 	if (str.length() > 8)
 	{
@@ -31,7 +27,7 @@ void printField(std::string str)
 	}
 }
 
-void printHeader( void ) 
+void PhoneBook::PrintHeader( void ) 
 {
 	std::cout << "_____________________________________" << std::endl;
 	std::cout << "|        | First  |  Last  | Nick   |" << std::endl;
@@ -73,7 +69,7 @@ void PhoneBook::Add ( void ) {
 	PhoneBook::_contactIndex++;
 	if (_contactIndex > 7)
 		_contactIndex = 0; 
-	std::cout << "Number of contacts = " << _numOfContacts << std::endl;
+	//std::cout << "Number of contacts = " << _numOfContacts << std::endl;
 	std::cout << "CONTACT ADDED TO PHONEBOOK!" << std::endl;
 	return ;
 }
@@ -84,17 +80,17 @@ void PhoneBook::Search ( void ) {
 	int index;
 	int	i = 0; 
 	if (_numOfContacts > 0)
-		printHeader();
+		PrintHeader();
 	while (i < _numOfContacts)
 	{
 		std::cout << "|       " << i+1 << "|";
 		str = PhoneBook::contacts[i].getFirstName();
-		printField(str);
+		PrintField(str);
 		str = PhoneBook::contacts[i].getLastName();
-		printField(str);
+		PrintField(str);
 		str = PhoneBook::contacts[i].getNickName();
-		printField(str);
-		std::cout << "\n ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾";
+		PrintField(str);
+		std::cout << std::endl; 
 		i++;
 	}
 	std::cout << std::endl;
@@ -106,12 +102,7 @@ void PhoneBook::Search ( void ) {
 		ShowContactDetails(index-1);
 	else
 		std::cout << "Index does not exist!" << std::endl;
-	std::cout << "index = " << index << std::endl;
+	//std::cout << "index = " << index << std::endl;
 	std::cout << std::endl;
 	return ;
 }
-
-
-
-
-
